@@ -4,7 +4,7 @@ body{
 
 
 #flex-parent{ 
-    background-color: orangered;
+    background-color: orangered; 
     display: flex;
 }
 #flex-parent p{

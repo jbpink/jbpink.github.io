@@ -1,0 +1,15 @@
+.network {
+    position: absolute;
+    top: 5%;
+    right: 12%;
+    width: 200px;
+    opacity: 0.8;
+    background-color: white;
+  }
+  
+  .score {
+    position: absolute;
+    bottom: -30%;
+    right: 5%;
+    width: 500px;
+  }

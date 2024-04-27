@@ -19,6 +19,11 @@ body{
     color: white;
   }
 
+  dt, dd {
+    margin: 0; 
+    padding: 0; 
+  }
+
   .header{
     text-align: center;
     margin: 50px;

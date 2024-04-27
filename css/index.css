@@ -1,3 +1,4 @@
+
 body{
     background-color:rgb(27,34,35);
     color:white ;
@@ -22,7 +23,7 @@ body{
   dt, dd {
     margin: 0; 
     padding: 0; 
-  }
+}
 
   .header{
     text-align: center;

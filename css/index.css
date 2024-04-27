@@ -51,8 +51,11 @@ body{
  @media screen and (max-width: 500px){
     .concert{
         text-align: center;
+        margin: 0;
+        margin-top: 50px;
     }
     .lists{
-        text-align: center;
+        display: flex;
+        flex-direction: column;
     }
 }

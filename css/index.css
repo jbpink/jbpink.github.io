@@ -1,0 +1,59 @@
+body{
+    background-color:rgb(27,34,35);
+    color:white ;
+  }
+
+  h1{
+    font-family: cursive;
+  }
+
+  h2{
+    font-family: cursive;
+  }
+
+  h3{
+    color: rgb(189, 205, 205);
+  }
+
+  dt{
+    color: white;
+  }
+
+  .header{
+    text-align: center;
+    margin: 50px;
+  }
+
+  img{
+    width: 30%;
+    height: 30%;
+  }
+
+  .concert{
+    padding:10px;
+    background-color:rgb(13,24,25);
+    height: 40%;
+    margin: 40px;
+    border: 2px solid black;
+  }
+  
+  .concert:hover{
+    border: 2px solid rgb(189, 205, 205);
+  }
+
+  .lists{
+    color: rgb(189, 205, 205);
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    }
+
+ @media screen and (max-width: 500px){
+    .concert{
+        text-align: center;
+    }
+    .lists{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+}

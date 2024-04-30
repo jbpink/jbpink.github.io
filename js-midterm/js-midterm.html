@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jack's Volume Slider</title>
+    <link rel="stylesheet" href="js-midterm.css">
+</head>
+<body>
+    <div class="slider-container">
+        <input type="range" min="0" max="100" value="50" class="volume-slider" id="volumeSlider">
+        <p>Volume: <span id="volumeValue">50%</span></p>
+      </div>
+      <div class="popup" id="riddlePopup">
+        <h1>Not so fast!</h1>
+        <h2 id="riddleText">Riddle goes here</h2>
+        <form id="answerForm">
+          <input type="text" id="riddleAnswer" placeholder="Type one word answer...">
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div id="feedbackScreen" class="feedback">
+        <p id="feedbackMessage"></p>
+      </div>
+    <script src="js-midterm-1.js"></script>
+</body>
+</html>

@@ -9,46 +9,59 @@ const riddles = [
     { question: "What can travel around the world while staying in a corner?", answer: "stamp" },
     { question: "What has a thumb and four fingers but is not alive?", answer: "glove" },
     { question: "What can you catch but not throw?", answer: "cold" }
-  ];
-  let firstInteraction = true;
-  let currentRiddleIndex = Math.floor(Math.random() * riddles.length);
-  
-  document.getElementById('volumeSlider').addEventListener('input', function() {
-    if (firstInteraction) {
-      this.value = 50;  
-      showRiddle();
-      firstInteraction = false; 
+];
+
+let firstInteraction = true;
+let volumeSaved = false;
+let currentRiddleIndex = Math.floor(Math.random() * riddles.length);
+
+document.getElementById('volumeSlider').addEventListener('change', function () {
+    if (volumeSaved) {
+        document.getElementById('volumeValue').textContent = this.value + '%';
     } else {
-      document.getElementById('volumeValue').textContent = this.value + '%';
+        this.value = 50; 
+        showRiddle();
     }
-  });
-  
-  document.getElementById('answerForm').addEventListener('submit', function(event) {
+});
+
+document.getElementById('answerForm').addEventListener('submit', function (event) {
     event.preventDefault();
     const userAnswer = document.getElementById('riddleAnswer').value.toLowerCase().trim();
     if (userAnswer === riddles[currentRiddleIndex].answer) {
-      showFeedback("Congratulations! You may now change the volume.", 3000, true);
+        showFeedback("Congratulations! You may now change the volume.", 3000, true);
+        document.getElementById('saveVolume').style.display = 'inline'; 
+        volumeSaved = true;
     } else {
-      showFeedback("Sorry, not today!", 5000, false);
+        showFeedback("Sorry, not today!", 5000, false);
     }
-  });
-  
-  function showRiddle() {
+});
+
+document.getElementById('saveVolume').addEventListener('click', function() {
+    this.style.display = 'none'; 
+    volumeSaved = false;
+    firstInteraction = true;
+});
+
+function showRiddle() {
+    currentRiddleIndex = Math.floor(Math.random() * riddles.length);
     document.getElementById('riddleText').textContent = riddles[currentRiddleIndex].question;
     document.getElementById('riddlePopup').style.display = 'block';
-  }
-  
-  function showFeedback(message, duration, correct) {
+}
+
+function showFeedback(message, duration, correct) {
     document.getElementById('feedbackMessage').textContent = message;
     document.getElementById('feedbackScreen').style.display = 'block';
     setTimeout(() => {
-      document.getElementById('feedbackScreen').style.display = 'none';
-      if (correct) {
-        document.getElementById('riddlePopup').style.display = 'none';
-      } else {
-        currentRiddleIndex = Math.floor(Math.random() * riddles.length);
-        showRiddle();
-      }
+        document.getElementById('feedbackScreen').style.display = 'none';
+        if (correct) {
+            document.getElementById('riddlePopup').style.display = 'none';
+        } else {
+            showRiddle();
+        }
     }, duration);
-  }
+}
+
+
+
+  
   
